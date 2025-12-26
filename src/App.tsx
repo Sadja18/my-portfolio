@@ -59,6 +59,16 @@ const App: React.FC = () => {
   // ---------- Project Data ----------
   const projects: Project[] = [
     {
+      title: "Doraemon Flappy Bird – HTML5 Canvas Game",
+      description:
+        "A responsive, framework-free Flappy Bird clone built with <strong>vanilla JavaScript and HTML5 Canvas</strong>. Features 60 FPS gameplay, physics-based flight, multi-input support (touch/mouse/keyboard), and adaptive UI for mobile.",
+      tech: ["Vanilla JavaScript", "HTML5 Canvas", "CSS3", "Responsive Design", "Game Dev"],
+      links: [
+        { name: "Live Demo", url: "https://sadja18.github.io/flappy-bird-game/" },
+        { name: "GitHub", url: "https://github.com/Sadja18/flappy-bird-game" },
+      ],
+    },
+    {
       title: "PDF Generation & Document Automation System",
       description:
         'Engineered a serverless pipeline on Google Cloud that processes <span class="highlight-metric">1M+ personalized PDFs</span> in <span class="highlight-metric">under 50 minutes</span> for physical mail campaigns.',
@@ -168,8 +178,8 @@ const App: React.FC = () => {
 
   // ---------- Skills ----------
   const skills: Skills = {
-    Languages: ["Python", "JavaScript", "Dart", "PHP"],
-    Frontend: ["React", "Angular", "Flutter", "Ionic", "jQuery"],
+    Languages: ["Python", "JavaScript", "TypeScript", "Dart", "Kotlin", "Java", "PHP"],
+  Frontend: ["React", "Angular", "Flutter", "Ionic", "jQuery", "Vanilla JS", "HTML5/CSS3"],
     Backend: ["FastAPI", "Django", "Flask", "Express.js"],
     Cloud: ["Firebase", "Google AppScript","Google Cloud (Cloud Run, Functions, BigQuery, Storage)", "Docker", "Serverless"],
     Mobile: ["Flutter", "Ionic + Capacitor", "Offline-First", "Camera/GPS APIs"],
@@ -241,7 +251,7 @@ const App: React.FC = () => {
             <div className="col-md-8 text-center text-md-start">
               <p className="lead">Hi, I'm Naman, a Full Stack Developer with a passion for creating impactful solutions.</p>
               <p>
-                I have 5+ years of experience specializing in cloud-native applications, mobile development (Flutter/Ionic), and data-driven platforms. I'm passionate about writing clean, secure code and delivering projects that make a real-world difference.
+                I have <strong>5+ years of experience</strong> specializing in cloud-native applications, mobile development (Flutter/Ionic), and data-driven platforms. I'm passionate about writing clean, secure code and delivering projects that make a real-world difference.
               </p>
               <div className="d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mt-4">
                 {["Google Cloud", "Flutter", "Django", "Security-First", "Open Source"].map((tag) => (
