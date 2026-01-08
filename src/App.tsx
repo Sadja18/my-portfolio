@@ -174,12 +174,44 @@ const App: React.FC = () => {
       ],
       tech: ["MEAN", "Node.js", "MongoDB", "SIEM"],
     },
+    {
+      role: "Project Engineer",
+      company: "C-DAC Chennai",
+      period: "Mar 2022 – Jan 2023",
+      location: "Chennai, Tamil Nadu, India",
+      bullets: [
+        "Full-stack Web, Desktop and Mobile development of exam and ERP systems using Python, Django, PHP, Flutter and XMLRPC.",
+        "Enhanced automated exam controller.",
+      ],
+      tech: ["Python", "PHP", "XMLRPC", "Mobile App Development", "Flutter", "Git", "Linux", "wxPython", "Desktop Application Development"],
+    },
+    {
+      role: "Project Associate",
+      company: "C-DAC Chennai",
+      period: "September 2021 – Mar 2022",
+      location: "Chennai, Tamil Nadu, India",
+      bullets: [
+        "Full-stack Web, Desktop and Mobile development of exam and ERP systems using Python, Django, PHP, Flutter and XMLRPC.",
+        "Enhanced automated exam controller.",
+      ],
+      tech: ["Python", "PHP", "XMLRPC", "Mobile App Development", "Flutter", "Git", "Linux", "wxPython", "Desktop Application Development"],
+    },
+    {
+      role: "Junior Software Engineer",
+      company: "GRL Technologies",
+      period: "May 2020 – July 2021",
+      location: "Lucknow, Uttar Pradesh, India",
+      bullets: [
+        "Automated Testing and utility implementation using Java and Node.js",
+      ],
+      tech: ["Node.js", "Java", "Selenium", "Automated Testing"],
+    }
   ];
 
   // ---------- Skills ----------
   const skills: Skills = {
     Languages: ["Python", "JavaScript", "TypeScript", "Dart", "Kotlin", "Java", "PHP"],
-  Frontend: ["React", "Angular", "Flutter", "Ionic", "jQuery", "Vanilla JS", "HTML5/CSS3"],
+    Frontend: ["React", "Angular", "Flutter", "Ionic", "jQuery", "Vanilla JS", "HTML5/CSS3", "Tkinter", "wxPython"],
     Backend: ["FastAPI", "Django", "Flask", "Express.js"],
     Cloud: ["Firebase", "Google AppScript","Google Cloud (Cloud Run, Functions, BigQuery, Storage)", "Docker", "Serverless"],
     Mobile: ["Flutter", "Ionic + Capacitor", "Offline-First", "Camera/GPS APIs"],
