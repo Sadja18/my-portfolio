@@ -458,7 +458,7 @@ const App: React.FC = () => {
                 </span>
               </div>
 
-              <a href="/Resume-02.pdf" download="Naman_Mishra_Resume.pdf" className="btn btn-primary mt-4">
+              <a href="/Resume.pdf" download="Naman_Mishra_Resume.pdf" className="btn btn-primary mt-4">
                 <Download size={18} className="me-2" /> Download Resume
               </a>
             </div>
