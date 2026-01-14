@@ -1,92 +1,87 @@
-# Naman Mishra  
-📍 New Delhi, India | 📧 namanmishraec1045@gmail.com | 📱 +91-7720897914 | 🔗 [LinkedIn](https://www.linkedin.com/in/naman-m-8575a6144/)
-[GitHub](https://github.com/Sadja18) 
-[Portfolio](https://my-portfolio-16538326-a5476.web.app/)  
+# Naman Mishra
+New Delhi, India  
+Email: namanmishraec1045@gmail.com  
+LinkedIn: linkedin.com/in/naman-m-8575a6144  
+GitHub: github.com/Sadja18  
+Portfolio: [My - Portfolio](https://my-portfolio-16538326-a5476.web.app/)
 
-**Full Stack Developer** specializing in secure, cloud-native web & mobile applications using **Flutter**, **Python**, and **Google Cloud**. **5+ years** of experience building scalable, data-driven platforms with a focus on clean architecture, user privacy, and real-world impact.
-
----
-
-## Professional Experience
-
-### **IT Manager**  
-**EdCIL (India) Ltd.** - New Delhi, India  
-*Oct 2025 – Present*  
-- Leading IT strategy and infrastructure for enterprise-grade digital initiatives.  
-- Overseeing cloud migration, security compliance, and cross-functional engineering teams.
-
-### **Project Engineer**  
-**Centre for Development of Advanced Computing (C-DAC), Pune**  
-*Dec 2024 – Oct 2025*  
-- Developed and deployed secure, high-throughput data processing systems on cloud infrastructure.  
-- Collaborated with government stakeholders on mission-critical digital transformation projects.
-
-### **Software Engineer**  
-**iTechnolabs Pvt. Ltd.** - Mohali, India  
-*Dec 2023 – Dec 2024*  
-- Built full-stack Flutter and Python applications for international clients across healthcare and e-commerce domains.  
-- Integrated CI/CD pipelines and implemented robust testing frameworks to ensure code quality.
-
-### **Project Engineer**  
-**C-DAC Mohali**  
-*Feb 2023 – Dec 2023*  
-- Engineered mobile and web solutions for public-sector digital services.  
-- Focused on performance optimization, offline-first design, and accessibility compliance.
-
-### **Junior Software Engineer**  
-**GRL Technologies**  
-*May 2020 – Jul 2021*  
-- Automated web data extraction and analytics workflows using **Python** (`BeautifulSoup`, `Pandas`).  
-- Developed reusable internal tools for scraping, data validation, and reporting in **Python and Java**, improving team productivity by reducing manual effort.
-
----
-
-## Featured Projects
-
-### 🔹 **Doraemon Flappy Bird – HTML5 Canvas Game**  
-- Built a **fully responsive**, mobile-friendly Flappy Bird clone using **vanilla JavaScript and HTML5 Canvas**-zero frameworks.  
-- Implemented a **60 FPS game loop**, physics-based flight, collision detection, and multi-input support (touch, mouse, keyboard).  
-- Designed modular architecture (`Game`, `Player`, `Pipe`, `InputHandler`) and adaptive UI with hidden controls on small screens.  
-- Deployed via GitHub Pages with offline support.  
-- [Live Demo](https://sadja18.github.io/flappy-bird-game/) | [Source Code](https://github.com/Sadja18/flappy-bird-game)
-
-### 🔹 **PDF Generation & Document Automation System**  
-- Designed a **serverless pipeline on Google Cloud** that processes **1M+ personalized PDFs in under 50 minutes** for physical mail campaigns.  
-- Leveraged Cloud Functions, Pub/Sub, and Firestore for scalable, cost-efficient document rendering.
-
-### 🔹 **Android Health Monitoring App (ContextMonitoring)**  
-- Built a **native Android app in just 3 days** using Kotlin and Jetpack Compose-despite zero prior experience-to meet a hard client deadline.  
-- Captures **multimodal health data**: heart rate (via facial video analysis), respiratory audio, and symptom logs-all stored **100% locally** for privacy.
-
-### 🔹 **Face Analyzer**  
-- Developed a deep learning model to estimate **age, gender, race, and skin tone** from facial images for a virtual trial room application.  
-- Integrated TensorFlow Lite for on-device inference with minimal latency.
-
-### 🔹 **IOC Intel Tools**  
-- Created a **Linux-based network reconnaissance toolkit** that extracts IPs/domains from local devices and outputs **SIEM-ready JSON** for threat intelligence workflows.
-
-### 🔹 **Improved – VS Code Theme**  
-- Published an **accessible, color-blind-friendly syntax theme** to reduce eye strain and improve developer ergonomics.  
-
----
+Self-taught full-stack engineer who ships resilient, privacy-first systems under ambiguous constraints. Specializes in serverless automation, mobile-to-cloud pipelines, and modernizing legacy workflows without relying on bloated tooling.
 
 ## Technical Skills
 
-- **Languages**: Python, Dart, JavaScript, TypeScript, Kotlin, Java, SQL  
-- **Frontend**: Flutter, React, **Vanilla JavaScript**, **HTML5/CSS3**, Jetpack Compose  
-- **Backend**: FastAPI, Firebase, Node.js  
-- **Cloud**: Google Cloud Platform (Cloud Functions, Firestore, Pub/Sub, IAM), Firebase  
-- **Mobile**: Flutter (cross-platform), Android (Kotlin)  
-- **Security**: OAuth2, JWT, data encryption, secure local storage, privacy-by-design  
-- **Data**: Pandas, BeautifulSoup, TensorFlow Lite, JSON/CSV processing  
-- **Databases**: Firestore, PostgreSQL, SQLite  
-- **DevOps**: GitHub Actions, Docker, CI/CD pipelines  
+Languages: Python, JavaScript, TypeScript, Dart, Kotlin, Java, PHP  
+Frontend: React, Flutter, Ionic, Angular, HTML5, CSS3  
+Backend: Flask, FastAPI, Express.js, Node.js  
+Cloud & DevOps: Google Cloud (Cloud Functions, Cloud Run, BigQuery, Cloud Storage), Docker, Firebase, Serverless Architecture  
+Mobile: Flutter, Jetpack Compose, Capacitor, Offline-First Design  
+Security & Quality: MobSF, SonarQube, Secure Coding, OWASP Awareness  
+Data & Automation: Pandas, BigQuery, ETL, Web Scraping (Selenium), Linux Shell Scripting  
+Databases: PostgreSQL, MySQL, MongoDB, SQLite
 
----
+## Professional Experience
 
-## Availability
+IT Manager  
+EdCIL (India) Ltd., New Delhi  
+October 2025 – Present  
+- Optimizing data analysis pipelines and reducing onboarding redundancies by approximately 20%.
 
-Currently employed full-time but **open to selective freelance or remote collaboration** on impactful, technically challenging projects.
+Project Engineer  
+Centre for Development of Advanced Computing (CDAC), Pune  
+December 2024 – October 2025  
+- Developed offline-first hybrid mobile applications using Ionic and Capacitor for field surveys, inspections, and citizen feedback under the PMGSY program.  
+- Integrated native device capabilities including camera, GPS, and geotagging.  
+- Enforced code quality and security using MobSF and SonarQube.
 
-> Let’s build something great together! 🚀  
-> **Portfolio**: [https://my-portfolio-16538326-a5476.web.app/](https://my-portfolio-16538326-a5476.web.app/)
+Software Engineer  
+iTechnolabs Pvt. Ltd., Mohali  
+December 2023 – December 2024  
+- Engineered a serverless document automation pipeline on Google Cloud that processes over 1 million personalized PDFs in under 50 minutes.  
+- Processed 1 billion+ e-commerce records from BigQuery with fuzzy deduplication (Levenshtein distance) to collapse household addresses.  
+- Orchestrated seven chained Cloud Functions with state persistence via Cloud Storage to bypass execution time limits—delivered with zero persistent database.
+
+Project Engineer  
+C-DAC Mohali  
+February 2023 – December 2023  
+- Built full-stack SIEM platforms using the MEAN stack and Python microservices.  
+- Enhanced real-time threat intelligence dashboards for security operations teams.
+
+Project Engineer → Project Associate  
+C-DAC Chennai  
+March 2022 – January 2023  
+- Delivered integrated exam and ERP systems across web, desktop (wxPython), and mobile (Flutter) using Python, PHP, and XML-RPC.  
+- Improved reliability and automation of high-stakes national exam controllers.
+
+Junior Software Engineer  
+GRL Technologies, Lucknow  
+May 2020 – July 2021  
+- Developed automation utilities and testing frameworks using Java and Node.js.
+
+## Key Projects
+
+Serverless PDF Automation Pipeline  
+- Replaced a $200K/year vendor by building an end-to-end GCP pipeline generating 1M+ print-ready PDFs from 1B+ records.  
+- Used fuzzy matching to deduplicate addresses; orchestrated chained Cloud Functions with Cloud Storage for state management.  
+- Built under strict "no database" constraint—pure serverless architecture.
+
+Privacy-First Android Health Monitor  
+- Built a native Android health monitoring app in 3 days with no prior Kotlin experience to meet urgent client deadline.  
+- Captures heart rate (via facial video analysis), respiratory audio, and symptom logs—all stored locally on device.
+
+Sadja Progress Stepper (Flutter)  
+- Created a customizable, scrollable stepper widget to unblock an Ionic-to-Flutter migration stalled by UX limitations of existing libraries.  
+- Published as open-source package on pub.dev; adopted internally for complex user flows.
+
+IOC Intel Recon Toolkit  
+- Developed a lightweight Linux-based network reconnaissance toolkit that extracts IPs and domains from local traffic and outputs SIEM-ready JSON in under 2 seconds.
+
+Personal Portfolio Website  
+- Designed and developed a responsive, accessible portfolio using React, TypeScript, and Framer Motion.  
+- Implements semantic HTML, dark/light mode, and performance-optimized asset loading.
+
+## Education
+
+Bachelor of Engineering in Electronics and Communication  
+Dr. A.P.J. Abdul Kalam Technical University, Lucknow, India  
+Graduated: 2017
+
+Self-taught in software development, databases, and full-stack engineering. Transitioned to Linux full-time in 2015 and adopted minimal, automation-friendly development environments to maximize productivity and reduce toolchain friction.

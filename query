@@ -1,0 +1,267 @@
+There is one thing I want you to know about my resume and the portfolio site which I face while applying.
+My skill and expertise is quite diverse. But not technically literate people do hiring using ATS.
+So, everytime I need to apply for a job (on any portal), I need to create/update one of the various versions of my resume, update my portfolio site, rebuild it, and reupload on firebase.
+
+That is why, I maintain the resume in markdown, and have the site has dynamic section like below:
+
+  // ---------- Project Data ----------
+  const projects: Project[] = [
+    {
+      title: "Doraemon Flappy Bird – HTML5 Canvas Game",
+      description:
+        "A responsive, framework-free Flappy Bird clone built with <strong>vanilla JavaScript and HTML5 Canvas</strong>. Features 60 FPS gameplay, physics-based flight, multi-input support (touch/mouse/keyboard), and adaptive UI for mobile.",
+      tech: ["Vanilla JavaScript", "HTML5 Canvas", "CSS3", "Responsive Design", "Game Dev"],
+      links: [
+        { name: "Live Demo", url: "https://sadja18.github.io/flappy-bird-game/" },
+        { name: "GitHub", url: "https://github.com/Sadja18/flappy-bird-game" },
+      ],
+    },
+    {
+      title: "PDF Generation & Document Automation System",
+      description:
+        'Engineered a serverless pipeline on Google Cloud that processes <span class="highlight-metric">1M+ personalized PDFs</span> in <span class="highlight-metric">under 50 minutes</span> for physical mail campaigns.',
+      tech: ["Python", "GCP", "Cloud Functions", "BigQuery", "Flask", "Docker"],
+      links: [],
+    },
+    {
+      title: "Android Health Monitoring App (ContextMonitoring)",
+      description: "In a high-pressure situation, I built this native Android app from scratch in just 3 days, despite having no prior experience with Kotlin or Jetpack Compose. When a client suddenly demanded a native version of a Flutter app with a 5-day deadline, I rapidly learned the new stack and recreated the entire UI and boilerplate. This privacy-first app captures multimodal health data—heart rate via facial video, respiratory audio, and symptom logging—all stored locally on the device.",
+      tech: ["Kotlin", "Jetpack Compose", "CameraX", "SQLite", "Android"],
+      links: [{ name: "GitHub", url: "https://github.com/Sadja18/context-monitoring" }],
+    },
+    {
+      title: "Blockchain Wallet (GoPay)",
+      description:
+        "Full-stack Ethereum wallet with Node.js backend and Flutter frontend. Supports wallet creation, balance checks, and Sepolia testnet transactions.",
+      tech: ["Node.js", "Express", "PostgreSQL", "Ethers.js", "Flutter", "JWT"],
+      links: [
+        { name: "Backend", url: "https://github.com/Sadja18/block_chain_wallet_backend" },
+        { name: "Mobile", url: "https://github.com/Sadja18/block_chain_wallet_mobile" },
+      ],
+    },
+    {
+      title: "Sadja Progress Stepper",
+      description:
+        "Customizable, scrollable Flutter stepper widget supporting linear/non-linear navigation. Published on pub.dev for the Flutter community.",
+      tech: ["Flutter", "Dart", "Open Source"],
+      links: [
+        { name: "pub.dev", url: "https://pub.dev/packages/sadja_progress_stepper" },
+        { name: "GitHub", url: "https://github.com/Sadja18/sadja_progress_stepper" },
+      ],
+    },
+    {
+      title: "Face Analyzer",
+      description:
+        "Deep learning model to estimate age, gender, race, and skin tone from facial images—designed for a virtual trial room application.",
+      tech: ["Python", "Computer Vision", "AI/ML"],
+      links: [{ name: "GitHub", url: "https://github.com/Sadja18/face_analyzer" }],
+    },
+    {
+      title: "IOC Intel Tools",
+      description:
+        "Linux-based network reconnaissance toolkit that extracts IPs and domains from local devices and outputs SIEM-ready JSON.",
+      tech: ["Linux", "Networking", "Security", "SIEM"],
+      links: [{ name: "GitHub", url: "https://github.com/Sadja18/ioc-intel-tools" }],
+    },
+    {
+      title: "Improved – VS Code Theme",
+      description:
+        "Accessible, color-blind-friendly syntax theme to reduce eye strain and improve developer ergonomics.",
+      tech: ["VS Code", "Accessibility", "Open Source"],
+      links: [
+        {
+          name: "Marketplace",
+          url: "https://marketplace.visualstudio.com/items?itemName=Sadja.Improved",
+        },
+      ],
+    },
+  ];
+
+  // ---------- Experience Data ----------
+  const experiences: Experience[] = [
+    {
+      role: "IT Manager",
+      company: "EdCIL (India) Ltd.",
+      period: "Oct 2025 – Present",
+      location: "New Delhi, India",
+      bullets: ["Improving data analysis pipelines and reducing redundancies by 20% during onboarding."],
+      tech: ["Data Pipelines", "GCP"],
+    },
+    {
+      role: "Project Engineer",
+      company: "CDAC, Pune",
+      period: "Dec 2024 – Oct 2025",
+      location: "Pune, India",
+      bullets: [
+        "Developed hybrid mobile apps using Ionic for PMGSY field surveys, inspections, and citizen feedback with offline-first design.",
+        "Integrated native device features (camera, GPS) via Capacitor.",
+        "Performed mobile security analysis using MobSF and code quality checks via SonarQube.",
+      ],
+      tech: ["Ionic", "Capacitor", "MobSF", "SonarQube", "Geo-tagging"],
+    },
+    {
+      role: "Software Engineer",
+      company: "iTechnolabs Pvt. Ltd., Mohali",
+      period: "Dec 2023 – Dec 2024",
+      location: "Mohali, India",
+      bullets: [
+        "Built serverless document automation pipelines processing 1M+ PDFs using Python and GCP.",
+        "Deployed microservices on Cloud Run and Cloud Functions.",
+        "Implemented Data Matrix tracking for logistics accuracy.",
+      ],
+      tech: ["Python", "GCP", "Cloud Run", "Cloud Functions", "BigQuery"],
+    },
+    {
+      role: "Project Engineer",
+      company: "C-DAC Mohali",
+      period: "Feb 2023 – Dec 2023",
+      location: "Mohali, India",
+      bullets: [
+        "Full-stack development of SIEM platforms using MEAN stack and Python services.",
+        "Enhanced real-time threat intelligence dashboards.",
+      ],
+      tech: ["MEAN", "Node.js", "MongoDB", "SIEM"],
+    },
+    {
+      role: "Project Engineer",
+      company: "C-DAC Chennai",
+      period: "Mar 2022 – Jan 2023",
+      location: "Chennai, Tamil Nadu, India",
+      bullets: [
+        "Full-stack Web, Desktop and Mobile development of exam and ERP systems using Python, Django, PHP, Flutter and XMLRPC.",
+        "Enhanced automated exam controller.",
+      ],
+      tech: ["Python", "PHP", "XMLRPC", "Mobile App Development", "Flutter", "Git", "Linux", "wxPython", "Desktop Application Development"],
+    },
+    {
+      role: "Project Associate",
+      company: "C-DAC Chennai",
+      period: "September 2021 – Mar 2022",
+      location: "Chennai, Tamil Nadu, India",
+      bullets: [
+        "Full-stack Web, Desktop and Mobile development of exam and ERP systems using Python, Django, PHP, Flutter and XMLRPC.",
+        "Enhanced automated exam controller.",
+      ],
+      tech: ["Python", "PHP", "XMLRPC", "Mobile App Development", "Flutter", "Git", "Linux", "wxPython", "Desktop Application Development"],
+    },
+    {
+      role: "Junior Software Engineer",
+      company: "GRL Technologies",
+      period: "May 2020 – July 2021",
+      location: "Lucknow, Uttar Pradesh, India",
+      bullets: [
+        "Automated Testing and utility implementation using Java and Node.js",
+      ],
+      tech: ["Node.js", "Java", "Selenium", "Automated Testing"],
+    }
+  ];
+
+  // ---------- Skills ----------
+  const skills: Skills = {
+    Languages: ["Python", "JavaScript", "TypeScript", "Dart", "Kotlin", "Java", "PHP"],
+    Frontend: ["React", "Angular", "Flutter", "Ionic", "jQuery", "Vanilla JS", "HTML5/CSS3", "Tkinter", "wxPython"],
+    Backend: ["FastAPI", "Django", "Flask", "Express.js"],
+    Cloud: ["Firebase", "Google AppScript","Google Cloud (Cloud Run, Functions, BigQuery, Storage)", "Docker", "Serverless"],
+    Mobile: ["Flutter", "Ionic + Capacitor", "Offline-First", "Camera/GPS APIs"],
+    Security: ["MobSF", "SonarQube", "OWASP Awareness", "Secure Coding"],
+    Data: ["Pandas", "GeoPandas", "ETL", "Web Scraping", "BigQuery"],
+    Databases: ["MongoDB", "MySQL", "Postgres", "MariaDB", "SQLite"]
+  };
+
+---
+
+Do you understand what I wrote? if yes, explain
+----
+
+I want something more feature rich.
+
+A single website, where I have following features:
+1. Resume management: 
+  1. CRUD using WYSIWYG editor (preferably markdown, because that way, I can add basic css because markdown supports html)
+  2. Dynamic URLs for resume PDF
+  3. Media storage for PDFs (I have a google drive but want to avoid paid google cloud billing.): I can get away with storing the markdown as text in sqlite db table, but for the generated PDFs (especially if I wanna allow download link in portfolio), I would need external media storage.
+2. Portfolio site management:
+    1. Each resume would have its own portfolio website in same UI layout.
+    2. Different site urls (I dont know how to achieve this) for separate portfolios.
+
+Do you understand this. if yes, explain what I am wondering feasibility of.
+---
+
+What if I have something less manual work.
+
+Like asking which role portfolio I want, 
+then for that specific portfolio, I would get separate sections:
+1. Profile Pic
+2. Headline (Optional)
+3. About : with option to specify whether to have same or different content in resume and portfolio site
+4. Experience: with sub fields: role, duration, location, bullets, and tech.
+5. Skills, with similar flow: frontend, backend, languages, cloud, databases, mobile, security, data
+6. get in touch section: with option to specify whether to have same or different content in resume and portfolio site
+7. footer: with option to specify whether to have same or different content in resume and portfolio site
+
+Now, I dont want code, but its feasibility and comparability to the flow I suggested before?
+---
+
+I am using firebase studio (formerly project IDX), simply because windows causes problems for filewatcher for both nodejs, and python while debug development (crashing, and port still busy on restarts).
+
+In firebase studio, I have option to develop in python flask, python django, nextjs, node express, laravel.
+I am confused on which to use (next js seems overkill for simple UI with bootstrap css). I can use turso for free sqlite db as I wouldnt have that much data. But for security, I would prefer to have some kind of user auth (which I can implement later)
+Which to go with is a question, but before that, I would like to know how do other projs do dynamic URLs for subsites like my project requires and whether I would need domain registration for it?
+
+---
+
+Okay, so Django with DTL it is
+let us go with flow 2 which I thought
+```
+What if I have something less manual work.
+
+Like asking which role portfolio I want, 
+then for that specific portfolio, I would get separate sections:
+1. Profile Pic
+2. Headline (Optional)
+3. About : with option to specify whether to have same or different content in resume and portfolio site
+4. Experience: with sub fields: role, duration, location, bullets, and tech.
+5. Skills, with similar flow: frontend, backend, languages, cloud, databases, mobile, security, data
+6. get in touch section: with option to specify whether to have same or different content in resume and portfolio site
+7. footer: with option to specify whether to have same or different content in resume and portfolio site
+```
+
+First, let us divide the full project MVP into implementable modules.
+Module section 1
+1. Dynamic data entry for using basic section based fields
+2. Resume preview and downloader without saving PDF
+3. Portfolio preview without dynamic URL
+
+Module Section 2
+1. dynamic URL for resume
+2. dynamic URL for portfolio
+3. Resume would have portfolio URL, portfolio would have resume URL
+
+Module section 3
+1. Publicly accessible URLs
+2. User auth
+
+---
+
+the django project template from firebase studio gives following proj structure:
+
+├── devserver.sh
+├── GEMINI.md
+├── mysite
+│   ├── db.sqlite3
+│   ├── manage.py
+│   ├── mysite
+│   │   ├── asgi.py
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-311.pyc
+│   │   │   ├── settings.cpython-311.pyc
+│   │   │   ├── urls.cpython-311.pyc
+│   │   │   └── wsgi.cpython-311.pyc
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   └── requirements.txt
+└── README.md
+
+I was hoping to create a roadmap.md, readme.md, and LICENSE

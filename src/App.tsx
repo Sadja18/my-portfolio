@@ -10,6 +10,7 @@ interface ProjectLink {
 
 interface Project {
   title: string;
+  tagline: string;
   description: string;
   tech: string[];
   links: ProjectLink[];
@@ -57,11 +58,83 @@ const App: React.FC = () => {
   };
 
   // ---------- Project Data ----------
+  // const projects: Project[] = [
+  //   {
+  //     title: "Doraemon Flappy Bird – HTML5 Canvas Game",
+  //     description:
+  //       "A responsive, framework-free Flappy Bird clone built with <strong>vanilla JavaScript and HTML5 Canvas</strong>. Features 60 FPS gameplay, physics-based flight, multi-input support (touch/mouse/keyboard), and adaptive UI for mobile.",
+  //     tech: ["Vanilla JavaScript", "HTML5 Canvas", "CSS3", "Responsive Design", "Game Dev"],
+  //     links: [
+  //       { name: "Live Demo", url: "https://sadja18.github.io/flappy-bird-game/" },
+  //       { name: "GitHub", url: "https://github.com/Sadja18/flappy-bird-game" },
+  //     ],
+  //   },
+  //   {
+  //     title: "PDF Generation & Document Automation System",
+  //     description:
+  //       'Engineered a serverless pipeline on Google Cloud that processes <span class="highlight-metric">1M+ personalized PDFs</span> in <span class="highlight-metric">under 50 minutes</span> for physical mail campaigns.',
+  //     tech: ["Python", "GCP", "Cloud Functions", "BigQuery", "Flask", "Docker"],
+  //     links: [],
+  //   },
+  //   {
+  //     title: "Android Health Monitoring App (ContextMonitoring)",
+  //     description: "In a high-pressure situation, I built this native Android app from scratch in just 3 days, despite having no prior experience with Kotlin or Jetpack Compose. When a client suddenly demanded a native version of a Flutter app with a 5-day deadline, I rapidly learned the new stack and recreated the entire UI and boilerplate. This privacy-first app captures multimodal health data—heart rate via facial video, respiratory audio, and symptom logging—all stored locally on the device.",
+  //     tech: ["Kotlin", "Jetpack Compose", "CameraX", "SQLite", "Android"],
+  //     links: [{ name: "GitHub", url: "https://github.com/Sadja18/context-monitoring" }],
+  //   },
+  //   {
+  //     title: "Blockchain Wallet (GoPay)",
+  //     description:
+  //       "Full-stack Ethereum wallet with Node.js backend and Flutter frontend. Supports wallet creation, balance checks, and Sepolia testnet transactions.",
+  //     tech: ["Node.js", "Express", "PostgreSQL", "Ethers.js", "Flutter", "JWT"],
+  //     links: [
+  //       { name: "Backend", url: "https://github.com/Sadja18/block_chain_wallet_backend" },
+  //       { name: "Mobile", url: "https://github.com/Sadja18/block_chain_wallet_mobile" },
+  //     ],
+  //   },
+  //   {
+  //     title: "Sadja Progress Stepper",
+  //     description:
+  //       "Customizable, scrollable Flutter stepper widget supporting linear/non-linear navigation. Published on pub.dev for the Flutter community.",
+  //     tech: ["Flutter", "Dart", "Open Source"],
+  //     links: [
+  //       { name: "pub.dev", url: "https://pub.dev/packages/sadja_progress_stepper" },
+  //       { name: "GitHub", url: "https://github.com/Sadja18/sadja_progress_stepper" },
+  //     ],
+  //   },
+  //   {
+  //     title: "Face Analyzer",
+  //     description:
+  //       "Deep learning model to estimate age, gender, race, and skin tone from facial images—designed for a virtual trial room application.",
+  //     tech: ["Python", "Computer Vision", "AI/ML"],
+  //     links: [{ name: "GitHub", url: "https://github.com/Sadja18/face_analyzer" }],
+  //   },
+  //   {
+  //     title: "IOC Intel Tools",
+  //     description:
+  //       "Linux-based network reconnaissance toolkit that extracts IPs and domains from local devices and outputs SIEM-ready JSON.",
+  //     tech: ["Linux", "Networking", "Security", "SIEM"],
+  //     links: [{ name: "GitHub", url: "https://github.com/Sadja18/ioc-intel-tools" }],
+  //   },
+  //   {
+  //     title: "Improved – VS Code Theme",
+  //     description:
+  //       "Accessible, color-blind-friendly syntax theme to reduce eye strain and improve developer ergonomics.",
+  //     tech: ["VS Code", "Accessibility", "Open Source"],
+  //     links: [
+  //       {
+  //         name: "Marketplace",
+  //         url: "https://marketplace.visualstudio.com/items?itemName=Sadja.Improved",
+  //       },
+  //     ],
+  //   },
+  // ];
   const projects: Project[] = [
     {
-      title: "Doraemon Flappy Bird – HTML5 Canvas Game",
+      title: "Doraemon Flappy Bird – Vanilla JS Game",
+      tagline: "60 FPS gameplay on low-end devices with zero dependencies.",
       description:
-        "A responsive, framework-free Flappy Bird clone built with <strong>vanilla JavaScript and HTML5 Canvas</strong>. Features 60 FPS gameplay, physics-based flight, multi-input support (touch/mouse/keyboard), and adaptive UI for mobile.",
+        "Built a responsive Flappy Bird clone from scratch using <strong>vanilla JavaScript and HTML5 Canvas</strong>—no frameworks, no libraries. Implemented physics-based flight, multi-input support (touch/mouse/keyboard), and adaptive UI that works flawlessly on mobile. Proved complex interactions don’t require heavy tooling.",
       tech: ["Vanilla JavaScript", "HTML5 Canvas", "CSS3", "Responsive Design", "Game Dev"],
       links: [
         { name: "Live Demo", url: "https://sadja18.github.io/flappy-bird-game/" },
@@ -69,22 +142,26 @@ const App: React.FC = () => {
       ],
     },
     {
-      title: "PDF Generation & Document Automation System",
+      title: "Serverless PDF Automation Pipeline",
+      tagline: "Generates 1M+ personalized print-ready PDFs in under 50 minutes—no database, no VMs.",
       description:
-        'Engineered a serverless pipeline on Google Cloud that processes <span class="highlight-metric">1M+ personalized PDFs</span> in <span class="highlight-metric">under 50 minutes</span> for physical mail campaigns.',
+        "Engineered an end-to-end serverless pipeline on Google Cloud to replace a $200k/year legacy vendor. Processes 1B+ e-commerce records from BigQuery, deduplicates household addresses using fuzzy matching (Levenshtein distance), and renders dynamic PDFs via <code>pdfmake</code>. Orchestrated 7 chained Cloud Functions (bypassing 1-hour limits via Cloud Storage state handoff) to batch, merge, and deliver to print/email/mail house—all without a single persistent database.",
       tech: ["Python", "GCP", "Cloud Functions", "BigQuery", "Flask", "Docker"],
       links: [],
     },
     {
-      title: "Android Health Monitoring App (ContextMonitoring)",
-      description: "In a high-pressure situation, I built this native Android app from scratch in just 3 days, despite having no prior experience with Kotlin or Jetpack Compose. When a client suddenly demanded a native version of a Flutter app with a 5-day deadline, I rapidly learned the new stack and recreated the entire UI and boilerplate. This privacy-first app captures multimodal health data—heart rate via facial video, respiratory audio, and symptom logging—all stored locally on the device.",
+      title: "Privacy-First Android Health Monitor",
+      tagline: "Built a native health app in 3 days—with zero Kotlin experience.",
+      description:
+        "When a client demanded a native Android version of a Flutter app with a 5-day deadline, I learned Jetpack Compose from scratch and delivered in 3 days. Captures heart rate (via facial video analysis), respiratory audio, and symptom logs—all stored locally on-device with zero cloud dependency. Built for teams requiring HIPAA-aligned data handling without backend complexity.",
       tech: ["Kotlin", "Jetpack Compose", "CameraX", "SQLite", "Android"],
       links: [{ name: "GitHub", url: "https://github.com/Sadja18/context-monitoring" }],
     },
     {
-      title: "Blockchain Wallet (GoPay)",
+      title: "Ethereum Wallet (GoPay)",
+      tagline: "Full-stack crypto wallet built in 36 hours for a technical assignment.",
       description:
-        "Full-stack Ethereum wallet with Node.js backend and Flutter frontend. Supports wallet creation, balance checks, and Sepolia testnet transactions.",
+        "Developed a complete Ethereum wallet in 36 hours as a hiring challenge—including JWT-secured Node.js backend (PostgreSQL + Ethers.js) and Flutter mobile app supporting Sepolia testnet transactions. One of the few candidates to fully deliver; the role was later rescinded (ghost job). Still stands as proof of rapid full-stack execution under extreme constraints.",
       tech: ["Node.js", "Express", "PostgreSQL", "Ethers.js", "Flutter", "JWT"],
       links: [
         { name: "Backend", url: "https://github.com/Sadja18/block_chain_wallet_backend" },
@@ -92,9 +169,10 @@ const App: React.FC = () => {
       ],
     },
     {
-      title: "Sadja Progress Stepper",
+      title: "Sadja Progress Stepper (Flutter)",
+      tagline: "Solved real UX gaps during an Ionic-to-Flutter migration.",
       description:
-        "Customizable, scrollable Flutter stepper widget supporting linear/non-linear navigation. Published on pub.dev for the Flutter community.",
+        "Built a customizable, scrollable Flutter stepper because off-the-shelf solutions couldn’t handle our team’s complex multi-step flows. Supports linear/non-linear navigation, dynamic step insertion, and full visual theming. Published to pub.dev and adopted internally to unblock a critical app migration led by a non-technical PM.",
       tech: ["Flutter", "Dart", "Open Source"],
       links: [
         { name: "pub.dev", url: "https://pub.dev/packages/sadja_progress_stepper" },
@@ -102,29 +180,42 @@ const App: React.FC = () => {
       ],
     },
     {
-      title: "Face Analyzer",
+      title: "Face Attribute Analyzer",
+      tagline: "Modular CV component for virtual trial rooms—delivered ready for client integration.",
       description:
-        "Deep learning model to estimate age, gender, race, and skin tone from facial images—designed for a virtual trial room application.",
+        "Developed a deep learning module to estimate age, gender, race, and skin tone from facial images. Designed as a standalone, plug-and-play component for a virtual trial room application. Client handled internal validation and deployment; my role was end-to-end model development and inference API delivery.",
       tech: ["Python", "Computer Vision", "AI/ML"],
       links: [{ name: "GitHub", url: "https://github.com/Sadja18/face_analyzer" }],
     },
     {
-      title: "IOC Intel Tools",
+      title: "IOC Intel Recon Toolkit",
+      tagline: "SIEM-ready network recon in under 2 seconds—no external dependencies.",
       description:
-        "Linux-based network reconnaissance toolkit that extracts IPs and domains from local devices and outputs SIEM-ready JSON.",
+        "Linux-based toolkit that extracts IPs and domains from local network traffic (ARP, DNS, DHCP) and outputs structured JSON for security teams. Built for incident responders needing fast, offline-capable intel without bloated commercial tools. Fully shell-scripted with zero external binaries.",
       tech: ["Linux", "Networking", "Security", "SIEM"],
       links: [{ name: "GitHub", url: "https://github.com/Sadja18/ioc-intel-tools" }],
     },
     {
       title: "Improved – VS Code Theme",
+      tagline: "Reduced eye strain for developers during long coding sessions.",
       description:
-        "Accessible, color-blind-friendly syntax theme to reduce eye strain and improve developer ergonomics.",
+        "Designed an accessible, color-blind-friendly syntax theme focused on ergonomics and readability. Meets WCAG contrast standards and minimizes blue-light fatigue. Published on VS Code Marketplace for developers who care about sustainable coding habits.",
       tech: ["VS Code", "Accessibility", "Open Source"],
       links: [
         {
           name: "Marketplace",
           url: "https://marketplace.visualstudio.com/items?itemName=Sadja.Improved",
         },
+      ],
+    },
+    {
+      title: "This Portfolio Site",
+      tagline: "A performant, accessible showcase built with modern React tooling.",
+      description:
+        "Designed and developed my own portfolio from scratch using <strong>React, TypeScript, and Framer Motion</strong>. Features smooth scroll-linked navigation, responsive dark/light mode, semantic HTML, and optimized asset loading. Built to reflect my engineering values: clean, user-first, and free of bloat.",
+      tech: ["React", "TypeScript", "Framer Motion", "Bootstrap 5", "Responsive Design", "Accessibility"],
+      links: [
+        { name: "Source Code", url: "https://github.com/Sadja18/my-portfolio" },
       ],
     },
   ];
@@ -213,7 +304,7 @@ const App: React.FC = () => {
     Languages: ["Python", "JavaScript", "TypeScript", "Dart", "Kotlin", "Java", "PHP"],
     Frontend: ["React", "Angular", "Flutter", "Ionic", "jQuery", "Vanilla JS", "HTML5/CSS3", "Tkinter", "wxPython"],
     Backend: ["FastAPI", "Django", "Flask", "Express.js"],
-    Cloud: ["Firebase", "Google AppScript","Google Cloud (Cloud Run, Functions, BigQuery, Storage)", "Docker", "Serverless"],
+    Cloud: ["Firebase", "Google AppScript", "Google Cloud (Cloud Run, Functions, BigQuery, Storage)", "Docker", "Serverless"],
     Mobile: ["Flutter", "Ionic + Capacitor", "Offline-First", "Camera/GPS APIs"],
     Security: ["MobSF", "SonarQube", "OWASP Awareness", "Secure Coding"],
     Data: ["Pandas", "GeoPandas", "ETL", "Web Scraping", "BigQuery"],
@@ -245,7 +336,7 @@ const App: React.FC = () => {
       </header>
 
       {/* ------------------ HERO ------------------ */}
-      <section id="hero" className="py-5 text-center">
+      {/* <section id="hero" className="py-5 text-center">
         <div className="container">
           <motion.h1 className="display-4 fw-bold mb-3" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             Full Stack Developer
@@ -268,10 +359,35 @@ const App: React.FC = () => {
             <ChevronDown size={24} className="mx-auto text-primary" />
           </motion.div>
         </div>
+      </section> */}
+      {/* ------------------ HERO ------------------ */}
+      <section id="hero" className="py-5 text-center">
+        <div className="container">
+          <motion.h1 className="display-4 fw-bold mb-3" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            Engineer Who Fixes Broken Workflows
+          </motion.h1>
+
+          <motion.p className="lead mb-4 mx-auto" style={{ maxWidth: "650px" }} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+            I build fast, privacy-respecting, offline-capable software - because tools should empower users, not frustrate them.
+          </motion.p>
+
+          <motion.div className="d-grid gap-2 d-sm-flex justify-content-sm-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+            <a href="#projects" className="btn btn-primary btn-lg px-4 gap-3">
+              View My Work <ExternalLink size={16} />
+            </a>
+            <a href="#contact" className="btn btn-outline-primary btn-lg px-4">
+              Get In Touch
+            </a>
+          </motion.div>
+
+          <motion.div className="mt-5" animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+            <ChevronDown size={24} className="mx-auto text-primary" />
+          </motion.div>
+        </div>
       </section>
 
       {/* --- ABOUT --- */}
-      <section id="about" className="py-5">
+      {/* <section id="about" className="py-5">
         <div className="container">
           <motion.h2 className="text-center fw-bold mb-5" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
             About Me
@@ -297,6 +413,51 @@ const App: React.FC = () => {
                   <MapPin size={16} /> New Delhi, India
                 </span>
               </div>
+              <a href="/Resume-02.pdf" download="Naman_Mishra_Resume.pdf" className="btn btn-primary mt-4">
+                <Download size={18} className="me-2" /> Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </section> */}
+      {/* --- ABOUT --- */}
+      <section id="about" className="py-5">
+        <div className="container">
+          <motion.h2 className="text-center fw-bold mb-5" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+            About Me
+          </motion.h2>
+          <div className="row align-items-center justify-content-center">
+            <div className="col-md-4 text-center mb-4 mb-md-0">
+              <img src="/1596863205435.jpg" alt="Naman Mishra" className="profile-pic img-fluid rounded-circle shadow-lg" />
+            </div>
+            <div className="col-md-8 text-center text-md-start">
+              <p className="lead">Hi, I'm Naman - a self-taught full-stack engineer who ships resilient systems even when handed impossible constraints.</p>
+
+              <p>
+                With <strong>5+ years of experience</strong>, I specialize in turning ambiguous, high-pressure requests into secure, maintainable solutions - whether it's a serverless PDF pipeline processing 1M+ documents, a privacy-first Android health app built in 3 days with zero Kotlin experience, or unblocking legacy migrations led by non-technical stakeholders.
+              </p>
+
+              <p>
+                I believe software should serve users - not force users to serve broken software. That's why I prioritize <strong>performance, accessibility, and offline resilience</strong> even when clients don't ask for it.
+              </p>
+
+              <div className="d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mt-4">
+                {["Self-Taught Engineer", "Serverless Architect", "Privacy-First", "Legacy Modernizer", "Open Source Contributor"].map((tag) => (
+                  <span key={tag} className="badge bg-primary-subtle text-primary-emphasis rounded-pill px-3 py-2">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="d-flex align-items-center justify-content-center justify-content-md-start gap-4 mt-4">
+                <span className="d-flex align-items-center gap-2">
+                  <MapPin size={16} /> New Delhi, India
+                </span>
+                <span className="d-flex align-items-center gap-2">
+                  🎓 B. Tech. Electronics & Communication Engineering
+                </span>
+              </div>
+
               <a href="/Resume-02.pdf" download="Naman_Mishra_Resume.pdf" className="btn btn-primary mt-4">
                 <Download size={18} className="me-2" /> Download Resume
               </a>
@@ -357,6 +518,7 @@ const App: React.FC = () => {
                 <div className="card shadow-sm h-100">
                   <div className="card-body">
                     <h3 className="card-title h5 fw-bold">{project.title}</h3>
+                    <p className="text-primary mb-2"><em>{project.tagline}</em></p>
                     <p className="card-text text-muted" dangerouslySetInnerHTML={{ __html: project.description }}></p>
                     <div className="d-flex flex-wrap gap-2 mb-3">
                       {project.tech.map((tech, i) => (

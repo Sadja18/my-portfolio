@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% ModernCV themes: 'casual', 'classic', 'oldstyle', 'banking'
+\moderncvstyle{casual}
+\moderncvcolor{blue}
+
+% Character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.75]{geometry}
+\usepackage{multicol}
+
+% Personal info
+\name{Naman}{Mishra}
+\phone{+91 7720897915}
+\email{namanmishraec1045@gmail.com}
+\homepage{https://my-portfolio-16538326-a5476.web.app/}
+\social[linkedin]{naman-m-8575a6144}
+\social[github]{Sadja18}
+\extrainfo{New Delhi, India}
+
+\begin{document}
+
+\section{Summary}
+Self-taught full-stack engineer who ships resilient, privacy-first systems under ambiguous constraints. Specializes in serverless automation, mobile-to-cloud pipelines, and modernizing legacy workflows—without bloated tooling or theoretical abstractions.
+
+\section{Technical Skills}
+\begin{itemize}
+  \item \textbf{Languages:} Python, JavaScript/TypeScript, Dart, Kotlin, Java, PHP
+  \item \textbf{Frontend:} React, Flutter, Ionic, Angular, HTML5/CSS3
+  \item \textbf{Backend:} Flask, FastAPI, Express.js, Node.js
+  \item \textbf{Cloud \& DevOps:} Google Cloud (Cloud Functions, Cloud Run, BigQuery, Storage), Docker, Serverless Architecture
+  \item \textbf{Mobile:} Flutter, Jetpack Compose, Capacitor, Offline-First Design
+  \item \textbf{Security \& Quality:} MobSF, SonarQube, Secure Coding, OWASP Awareness
+  \item \textbf{Data \& Automation:} Pandas, BigQuery, ETL, Web Scraping (Selenium), Linux Shell Scripting
+  \item \textbf{Databases:} PostgreSQL, MySQL, MongoDB, SQLite
+\end{itemize}
+
+\section{Professional Experience}
+
+\cventry{Oct 2025--Present}{IT Manager}{EdCIL (India) Ltd.}{New Delhi}{}{%
+  Optimizing data analysis pipelines and reducing onboarding redundancies by approximately 20\%.%
+}
+
+\cventry{Dec 2024--Oct 2025}{Project Engineer}{Centre for Development of Advanced Computing (CDAC)}{Pune}{}{%
+  Developed offline-first hybrid mobile apps using Ionic and Capacitor for PMGSY field surveys and citizen feedback; integrated camera, GPS, and geotagging; enforced security via MobSF and SonarQube.%
+}
+
+\cventry{Dec 2023--Dec 2024}{Software Engineer}{iTechnolabs Pvt. Ltd.}{Mohali}{}{%
+  Engineered a serverless PDF automation pipeline on GCP that processes 1M+ personalized documents in under 50 minutes from 1B+ e-commerce records; used fuzzy matching (Levenshtein) for address deduplication; orchestrated 7 chained Cloud Functions with Cloud Storage state handoff—zero persistent database.%
+}
+
+\cventry{Feb 2023--Dec 2023}{Project Engineer}{C-DAC}{Mohali}{}{%
+  Built full-stack SIEM platforms using MEAN stack and Python services; enhanced real-time threat intelligence dashboards.%
+}
+
+\cventry{Mar 2022--Jan 2023}{Project Engineer / Project Associate}{C-DAC}{Chennai}{}{%
+  Delivered integrated exam and ERP systems across web, desktop (wxPython), and mobile (Flutter) using Python, PHP, and XML-RPC; improved automated exam controller reliability.%
+}
+
+\cventry{May 2020--Jul 2021}{Junior Software Engineer}{GRL Technologies}{Lucknow}{}{%
+  Developed automation utilities and testing frameworks using Java and Node.js.%
+}
+
+\section{Key Projects}
+
+\cventry{}{Serverless PDF Automation Pipeline}{}{}{}{%
+  Replaced \$200K/year vendor with GCP pipeline generating 1M+ print-ready PDFs; pure serverless, no database, chained Cloud Functions with state persistence via Cloud Storage.%
+}
+
+\cventry{}{Privacy-First Android Health Monitor}{}{}{}{%
+  Built native Android app in 3 days with zero Kotlin experience; captures heart rate (via facial video), audio, and symptoms—all stored locally on device.%
+}
+
+\cventry{}{Sadja Progress Stepper (Flutter)}{}{}{}{%
+  Created open-source customizable stepper to unblock Ionic-to-Flutter migration; published on pub.dev and adopted internally for complex user flows.%
+}
+
+\cventry{}{IOC Intel Recon Toolkit}{}{}{}{%
+  Linux-based network recon toolkit extracting IPs/domains and outputting SIEM-ready JSON in under 2 seconds—no external dependencies.%
+}
+
+\cventry{}{Personal Portfolio Website}{}{}{}{%
+  Built with React, TypeScript, and Framer Motion; responsive, accessible, dark/light mode, semantic HTML—reflects lean engineering philosophy.%
+}
+
+\section{Education}
+\cventry{Graduated: 2017}{Bachelor of Engineering in Electronics and Communication}{Dr. A.P.J. Abdul Kalam Technical University, Lucknow}{India}{}{%
+  Self-taught in software development, databases, and full-stack engineering. Transitioned to Linux full-time in 2015 and adopted minimal, automation-focused development environments to maximize productivity and reduce toolchain friction.%
+}
+
+\end{document}
