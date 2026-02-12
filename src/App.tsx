@@ -65,237 +65,162 @@ const App: React.FC = () => {
 
   // ---------- Project Data ----------
   const projects: Project[] = [
-  {
-    title: "Serverless PDF Automation Pipeline",
-    tagline: "Generates 1M+ personalized print-ready PDFs in under 50 minutes—no database, no VMs.",
-    about: "Replaced a $200K/year vendor with a zero-database GCP pipeline that processes 1B+ property records.",
-    challenge: "Client workflows relied on error-prone mail houses that couldn’t handle dynamic property lists or provide auditability. Manual filtering of 17M properties had inconsistent addresses (+5/+9 ZIPs, variable formatting).",
-    decisions: [
-      "Levenshtein over AI: Rejected ChatGPT API for owner deduplication due to unreliability at scale; implemented deterministic fuzzy matching that handles real-world address noise offline.",
-      "No databases: Used BigQuery tables for job state tracking and Cloud Storage as a message queue—satisfying client's 'no maintenance' constraint while enabling full auditability.",
-      "Bypassed 60-minute limits: Split workflow into 7 chained Cloud Functions with state handoff via Cloud Storage exports.",
-      "PDFmake for serverless: Chose JSON-driven templating over headless browsers to avoid memory crashes during 1M+ PDF generation."
-    ],
-    outcome: "Eliminated mail house errors, restored client trust through real-time progress tracking, and delivered zero production failures post-launch—all while avoiding $200K/year in vendor costs.",
-    tech: ["Python", "GCP", "Cloud Functions", "BigQuery", "Flask", "Docker"],
-    links: []
-  },
-  {
-    title: "Privacy-First Android Health Monitor",
-    tagline: "Built a native health app in 3 days—with zero Kotlin experience.",
-    about: "A fully native Android health app built in 72 hours to fulfill an academic requirement under tight deadlines.",
-    challenge: "A junior developer needed a Kotlin/Java-based submission for his MS program, but lacked time to rebuild his Flutter prototype. The instructor rejected cross-platform code, forcing a native rewrite in 3 days.",
-    decisions: [
-      "Learn-on-the-fly: Picked up Jetpack Compose, CameraX, and Android media APIs through documentation and rapid prototyping.",
-      "Privacy-by-design: All data (video, audio, symptoms) stored locally with encrypted SQLite and secure file handling—no cloud, no telemetry.",
-      "Minimal viable scope: Focused only on core features: facial heart rate analysis, respiratory audio capture, and symptom logging."
-    ],
-    outcome: "Delivered a production-ready APK that passed academic evaluation—while reinforcing that privacy doesn’t require backend complexity.",
-    tech: ["Kotlin", "Jetpack Compose", "CameraX", "SQLite", "Android"],
-    links: [{ name: "GitHub", url: "https://github.com/Sadja18/context-monitoring" }]
-  },
-  {
-    title: "Ethereum Wallet (GoPay)",
-    tagline: "Full-stack crypto wallet built in 36 hours for a technical assignment.",
-    about: "A complete Ethereum wallet built in 36 hours as a hiring challenge—featuring JWT-secured Node.js backend and Flutter mobile app for Sepolia testnet transactions.",
-    challenge: "Build a functional crypto wallet with key management, transaction signing, and blockchain integration—despite zero prior experience with Ethereum tooling—and deliver it in under two days.",
-    decisions: [
-      "Rapid stack mastery: Learned Ethers.js, wallet key handling, and Sepolia RPC endpoints via Stack Overflow and official docs under extreme time pressure.",
-      "Fallback resilience: Implemented retry logic for unstable public RPC nodes to ensure transaction reliability.",
-      "Security baseline: Used JWT for auth and PostgreSQL for encrypted private key storage (though keys were never exposed to frontend)."
-    ],
-    outcome: "One of the few candidates to fully deliver a working wallet. Later discovered the role was a 'ghost job'—a common tactic to extract free work—but the project remains proof of rapid full-stack execution under constraints.",
-    tech: ["Node.js", "Express", "PostgreSQL", "Ethers.js", "Flutter", "JWT"],
-    links: [
-      { name: "Backend", url: "https://github.com/Sadja18/block_chain_wallet_backend" },
-      { name: "Mobile", url: "https://github.com/Sadja18/block_chain_wallet_mobile" }
-    ]
-  },
-  {
-    title: "Sadja Progress Stepper (Flutter)",
-    tagline: "Solved real UX gaps during an Ionic-to-Flutter migration.",
-    about: "A highly customizable Flutter stepper widget published to pub.dev to solve UX gaps during an Ionic-to-Flutter migration.",
-    challenge: "Off-the-shelf Flutter steppers couldn’t support dynamic step insertion, non-linear navigation, or granular visual theming—blocking a critical app migration led by a non-technical PM.",
-    decisions: [
-      "Full visual control: Enabled custom icons (images instead of numbers), per-state color overrides (active/disabled/filled), and connector line styling.",
-      "Navigation flexibility: Supported both linear and free-movement modes, with runtime toggling.",
-      "Zero foreign dependencies: Built entirely in Dart with no non-Indian open-source contributions—meeting internal compliance requirements."
-    ],
-    outcome: "Published to pub.dev and integrated into the migration project. Though later removed when the PM reverted to linear-only flow, it unblocked the team during a critical phase.",
-    tech: ["Flutter", "Dart", "Open Source"],
-    links: [
-      { name: "pub.dev", url: "https://pub.dev/packages/sadja_progress_stepper" },
-      { name: "GitHub", url: "https://github.com/Sadja18/sadja_progress_stepper" }
-    ]
-  },
-  {
-    title: "Face Attribute Analyzer",
-    tagline: "Modular CV component for virtual trial rooms—delivered ready for client integration.",
-    about: "A modular computer vision component for virtual trial rooms—estimating age, gender, race, and skin tone from facial images.",
-    challenge: "Deliver a plug-and-play module for client integration—without access to their internal validation or deployment pipeline.",
-    decisions: [
-      "Pre-trained model reuse: Leveraged an existing CV model but extended its output to include skin tone and confidence scores not in the original API.",
-      "Local inference server: Wrapped the model in a lightweight Python HTTP server for easy client-side integration.",
-      "Stateless design: No persistent storage; each request processed independently for scalability."
-    ],
-    outcome: "Delivered a standalone, client-ready module that required zero backend changes—enabling seamless integration into their virtual trial room application.",
-    tech: ["Python", "Computer Vision", "AI/ML"],
-    links: [{ name: "GitHub", url: "https://github.com/Sadja18/face_analyzer" }]
-  },
-  {
-    title: "IOC Intel Recon Toolkit",
-    tagline: "SIEM-ready network recon in under 2 seconds—no external dependencies.",
-    about: "A Linux-based network reconnaissance toolkit that extracts IPs and domains from local traffic in under 2 seconds—outputting SIEM-ready JSON with zero external dependencies.",
-    challenge: "Incident responders needed fast, offline-capable intel without bloated commercial tools—requiring raw data extraction from ARP, DNS, and DHCP traffic.",
-    decisions: [
-      "Pure shell scripting: Used only built-in Linux tools (`netstat`, `ip`, `arp`)—no external binaries or Python dependencies.",
-      "SIEM-first output: Structured results as JSON matching the team’s MongoDB ingestion schema.",
-      "Speed over completeness: Prioritized sub-2-second runtime by limiting scope to high-value traffic sources."
-    ],
-    outcome: "Became a go-to tool for field teams needing rapid, offline network recon—proving lightweight tooling can outperform commercial suites in constrained environments.",
-    tech: ["Linux", "Networking", "Security", "SIEM"],
-    links: [{ name: "GitHub", url: "https://github.com/Sadja18/ioc-intel-tools" }]
-  },
-  {
-    title: "Doraemon Flappy Bird – Vanilla JS Game",
-    tagline: "60 FPS gameplay on low-end devices with zero dependencies.",
-    about: "A lightweight, high-performance Flappy Bird clone built entirely with vanilla JavaScript and HTML5 Canvas—no frameworks, libraries, or external dependencies.",
-    challenge: "Learn core game development concepts (physics, rendering, input handling) without relying on engines or third-party tools—while ensuring smooth 60 FPS performance even on low-end devices.",
-    decisions: [
-      "No external libraries: Implemented custom physics, collision detection, and frame-loop logic from scratch to understand foundational game mechanics.",
-      "Multi-input support: Unified touch, mouse, and keyboard events into a single control abstraction for cross-device compatibility.",
-      "Performance-first design: Avoided DOM manipulation; used pure Canvas 2D rendering to minimize browser load and enable GitHub Pages deployment."
-    ],
-    outcome: "Delivered a sub-100KB, zero-dependency game that runs at 60 FPS on budget Android devices—proving complex interactions don’t require heavy tooling.",
-    tech: ["Vanilla JavaScript", "HTML5 Canvas", "CSS3", "Responsive Design", "Game Dev"],
-    links: [
-      { name: "Live Demo", url: "https://sadja18.github.io/flappy-bird-game/" },
-      { name: "GitHub", url: "https://github.com/Sadja18/flappy-bird-game" }
-    ]
-  },
-  {
-    title: "Improved – VS Code Theme",
-    tagline: "Reduced eye strain for developers during long coding sessions.",
-    about: "An accessible, ergonomics-focused syntax theme designed to reduce eye strain during long coding sessions.",
-    challenge: "Default dark themes used harsh blue-on-black text that caused fatigue during extended use—especially under low-light conditions.",
-    decisions: [
-      "WCAG-compliant contrast: Ensured all text meets AA/AAA accessibility standards for readability.",
-      "Blue-light reduction: Replaced cool blues with warmer tones to minimize circadian disruption.",
-      "Self-serving design: Built purely to solve a personal pain point—then shared publicly for others with similar needs."
-    ],
-    outcome: "Published to VS Code Marketplace as a sustainable coding tool for developers who prioritize long-term visual comfort over aesthetic trends.",
-    tech: ["VS Code", "Accessibility", "Open Source"],
-    links: [
-      { name: "Marketplace", url: "https://marketplace.visualstudio.com/items?itemName=Sadja.Improved" }
-    ]
-  },
-  {
-    title: "This Portfolio Site",
-    tagline: "A performant, accessible showcase built with modern React tooling.",
-    about: "Designed and developed my own portfolio from scratch using React, TypeScript, and Framer Motion.",
-    challenge: "Create a fast, accessible, and maintainable showcase that reflects engineering values: clean, user-first, and free of bloat.",
-    decisions: [
-      "Content-as-data architecture: All project/experience content lives in structured TypeScript arrays—no hardcoded strings.",
-      "Semantic HTML + ARIA: Built with accessibility as a core requirement, not an afterthought.",
-      "Performance-first: Zero external dependencies beyond React ecosystem; optimized asset loading."
-    ],
-    outcome: "A living portfolio that’s easy to update, accessible to all users, and demonstrates modern React best practices.",
-    tech: ["React", "TypeScript", "Framer Motion", "Bootstrap 5", "Responsive Design", "Accessibility"],
-    links: [
-      { name: "Source Code", url: "https://github.com/Sadja18/my-portfolio" }
-    ]
-  }
-];
-  // const projects: Project[] = [
-  //   {
-  //     title: "Doraemon Flappy Bird – Vanilla JS Game",
-  //     tagline: "60 FPS gameplay on low-end devices with zero dependencies.",
-  //     description:
-  //       "Built a responsive Flappy Bird clone from scratch using <strong>vanilla JavaScript and HTML5 Canvas</strong>—no frameworks, no libraries. Implemented physics-based flight, multi-input support (touch/mouse/keyboard), and adaptive UI that works flawlessly on mobile. Proved complex interactions don’t require heavy tooling.",
-  //     tech: ["Vanilla JavaScript", "HTML5 Canvas", "CSS3", "Responsive Design", "Game Dev"],
-  //     links: [
-  //       { name: "Live Demo", url: "https://sadja18.github.io/flappy-bird-game/" },
-  //       { name: "GitHub", url: "https://github.com/Sadja18/flappy-bird-game" },
-  //     ],
-  //   },
-  //   {
-  //     title: "Serverless PDF Automation Pipeline",
-  //     tagline: "Generates 1M+ personalized print-ready PDFs in under 50 minutes—no database, no VMs.",
-  //     description:
-  //       "Engineered an end-to-end serverless pipeline on Google Cloud to replace a $200k/year legacy vendor. Processes 1B+ e-commerce records from BigQuery, deduplicates household addresses using fuzzy matching (Levenshtein distance), and renders dynamic PDFs via <code>pdfmake</code>. Orchestrated 7 chained Cloud Functions (bypassing 1-hour limits via Cloud Storage state handoff) to batch, merge, and deliver to print/email/mail house—all without a single persistent database.",
-  //     tech: ["Python", "GCP", "Cloud Functions", "BigQuery", "Flask", "Docker"],
-  //     links: [],
-  //   },
-  //   {
-  //     title: "Privacy-First Android Health Monitor",
-  //     tagline: "Built a native health app in 3 days—with zero Kotlin experience.",
-  //     description:
-  //       "When a client demanded a native Android version of a Flutter app with a 5-day deadline, I learned Jetpack Compose from scratch and delivered in 3 days. Captures heart rate (via facial video analysis), respiratory audio, and symptom logs—all stored locally on-device with zero cloud dependency. Built for teams requiring HIPAA-aligned data handling without backend complexity.",
-  //     tech: ["Kotlin", "Jetpack Compose", "CameraX", "SQLite", "Android"],
-  //     links: [{ name: "GitHub", url: "https://github.com/Sadja18/context-monitoring" }],
-  //   },
-  //   {
-  //     title: "Ethereum Wallet (GoPay)",
-  //     tagline: "Full-stack crypto wallet built in 36 hours for a technical assignment.",
-  //     description:
-  //       "Developed a complete Ethereum wallet in 36 hours as a hiring challenge—including JWT-secured Node.js backend (PostgreSQL + Ethers.js) and Flutter mobile app supporting Sepolia testnet transactions. One of the few candidates to fully deliver; the role was later rescinded (ghost job). Still stands as proof of rapid full-stack execution under extreme constraints.",
-  //     tech: ["Node.js", "Express", "PostgreSQL", "Ethers.js", "Flutter", "JWT"],
-  //     links: [
-  //       { name: "Backend", url: "https://github.com/Sadja18/block_chain_wallet_backend" },
-  //       { name: "Mobile", url: "https://github.com/Sadja18/block_chain_wallet_mobile" },
-  //     ],
-  //   },
-  //   {
-  //     title: "Sadja Progress Stepper (Flutter)",
-  //     tagline: "Solved real UX gaps during an Ionic-to-Flutter migration.",
-  //     description:
-  //       "Built a customizable, scrollable Flutter stepper because off-the-shelf solutions couldn’t handle our team’s complex multi-step flows. Supports linear/non-linear navigation, dynamic step insertion, and full visual theming. Published to pub.dev and adopted internally to unblock a critical app migration led by a non-technical PM.",
-  //     tech: ["Flutter", "Dart", "Open Source"],
-  //     links: [
-  //       { name: "pub.dev", url: "https://pub.dev/packages/sadja_progress_stepper" },
-  //       { name: "GitHub", url: "https://github.com/Sadja18/sadja_progress_stepper" },
-  //     ],
-  //   },
-  //   {
-  //     title: "Face Attribute Analyzer",
-  //     tagline: "Modular CV component for virtual trial rooms—delivered ready for client integration.",
-  //     description:
-  //       "Developed a deep learning module to estimate age, gender, race, and skin tone from facial images. Designed as a standalone, plug-and-play component for a virtual trial room application. Client handled internal validation and deployment; my role was end-to-end model development and inference API delivery.",
-  //     tech: ["Python", "Computer Vision", "AI/ML"],
-  //     links: [{ name: "GitHub", url: "https://github.com/Sadja18/face_analyzer" }],
-  //   },
-  //   {
-  //     title: "IOC Intel Recon Toolkit",
-  //     tagline: "SIEM-ready network recon in under 2 seconds—no external dependencies.",
-  //     description:
-  //       "Linux-based toolkit that extracts IPs and domains from local network traffic (ARP, DNS, DHCP) and outputs structured JSON for security teams. Built for incident responders needing fast, offline-capable intel without bloated commercial tools. Fully shell-scripted with zero external binaries.",
-  //     tech: ["Linux", "Networking", "Security", "SIEM"],
-  //     links: [{ name: "GitHub", url: "https://github.com/Sadja18/ioc-intel-tools" }],
-  //   },
-  //   {
-  //     title: "Improved – VS Code Theme",
-  //     tagline: "Reduced eye strain for developers during long coding sessions.",
-  //     description:
-  //       "Designed an accessible, color-blind-friendly syntax theme focused on ergonomics and readability. Meets WCAG contrast standards and minimizes blue-light fatigue. Published on VS Code Marketplace for developers who care about sustainable coding habits.",
-  //     tech: ["VS Code", "Accessibility", "Open Source"],
-  //     links: [
-  //       {
-  //         name: "Marketplace",
-  //         url: "https://marketplace.visualstudio.com/items?itemName=Sadja.Improved",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: "This Portfolio Site",
-  //     tagline: "A performant, accessible showcase built with modern React tooling.",
-  //     description:
-  //       "Designed and developed my own portfolio from scratch using <strong>React, TypeScript, and Framer Motion</strong>. Features smooth scroll-linked navigation, responsive dark/light mode, semantic HTML, and optimized asset loading. Built to reflect my engineering values: clean, user-first, and free of bloat.",
-  //     tech: ["React", "TypeScript", "Framer Motion", "Bootstrap 5", "Responsive Design", "Accessibility"],
-  //     links: [
-  //       { name: "Source Code", url: "https://github.com/Sadja18/my-portfolio" },
-  //     ],
-  //   },
-  // ];
+    {
+      title: "Currency Rate Ingestion & Analytics Service",
+      tagline: "Production-grade financial API with idempotency, scheduling, and observability—built in a take-home assignment.",
+      about: "A complete REST API for fetching, storing, and analyzing foreign exchange rates using NestJS and PostgreSQL.",
+      challenge: "Build a reliable, secure, and scalable currency rate service in a constrained timebox—handling flaky third-party APIs, duplicate prevention, and background processing without over-engineering.",
+      decisions: [
+        "Idempotency via fetchedAtMinute: Prevented duplicate records within the same minute using a derived integer column and composite DB constraint.",
+        "Unified ingestion path: Reused the same logic for manual (POST) and scheduled (cron) data pulls—ensuring consistency and reducing bugs.",
+        "SQLite-first prototyping: Validated core logic (deduplication, queries) with SQLite before migrating to PostgreSQL—reducing early infrastructure risk.",
+        "Minimalist security: Implemented static API key auth via custom guard—sufficient for internal services without OAuth complexity."
+      ],
+      outcome: "Delivered a fully compliant solution with health checks, structured logging, Docker support, and production-ready error handling—all within assignment constraints. Demonstrates ability to ship resilient financial APIs under pressure.",
+      tech: ["NestJS", "TypeScript", "PostgreSQL", "Docker", "REST API", "Cron Jobs", "API Security"],
+      links: [{ name: "GitHub", url: "https://github.com/Sadja18/assignment_nestjs" }]
+    },
+    {
+      title: "Serverless PDF Automation Pipeline",
+      tagline: "Generates 1M+ personalized print-ready PDFs in under 50 minutes—no database, no VMs.",
+      about: "Replaced a $200K/year vendor with a zero-database GCP pipeline that processes 1B+ property records.",
+      challenge: "Client workflows relied on error-prone mail houses that couldn’t handle dynamic property lists or provide auditability. Manual filtering of 17M properties had inconsistent addresses (+5/+9 ZIPs, variable formatting).",
+      decisions: [
+        "Levenshtein over AI: Rejected ChatGPT API for owner deduplication due to unreliability at scale; implemented deterministic fuzzy matching that handles real-world address noise offline.",
+        "No databases: Used BigQuery tables for job state tracking and Cloud Storage as a message queue—satisfying client's 'no maintenance' constraint while enabling full auditability.",
+        "Bypassed 60-minute limits: Split workflow into 7 chained Cloud Functions with state handoff via Cloud Storage exports.",
+        "PDFmake for serverless: Chose JSON-driven templating over headless browsers to avoid memory crashes during 1M+ PDF generation."
+      ],
+      outcome: "Eliminated mail house errors, restored client trust through real-time progress tracking, and delivered zero production failures post-launch—all while avoiding $200K/year in vendor costs.",
+      tech: ["Python", "GCP", "Cloud Functions", "BigQuery", "Flask", "Docker"],
+      links: []
+    },
+    {
+      title: "Privacy-First Android Health Monitor",
+      tagline: "Built a native health app in 3 days—with zero Kotlin experience.",
+      about: "A fully native Android health app built in 72 hours to fulfill an academic requirement under tight deadlines.",
+      challenge: "A junior developer needed a Kotlin/Java-based submission for his MS program, but lacked time to rebuild his Flutter prototype. The instructor rejected cross-platform code, forcing a native rewrite in 3 days.",
+      decisions: [
+        "Learn-on-the-fly: Picked up Jetpack Compose, CameraX, and Android media APIs through documentation and rapid prototyping.",
+        "Privacy-by-design: All data (video, audio, symptoms) stored locally with encrypted SQLite and secure file handling—no cloud, no telemetry.",
+        "Minimal viable scope: Focused only on core features: facial heart rate analysis, respiratory audio capture, and symptom logging."
+      ],
+      outcome: "Delivered a production-ready APK that passed academic evaluation—while reinforcing that privacy doesn’t require backend complexity.",
+      tech: ["Kotlin", "Jetpack Compose", "CameraX", "SQLite", "Android"],
+      links: [{ name: "GitHub", url: "https://github.com/Sadja18/context-monitoring" }]
+    },
+    {
+      title: "Ethereum Wallet (GoPay)",
+      tagline: "Full-stack crypto wallet built in 36 hours for a technical assignment.",
+      about: "A complete Ethereum wallet built in 36 hours as a hiring challenge—featuring JWT-secured Node.js backend and Flutter mobile app for Sepolia testnet transactions.",
+      challenge: "Build a functional crypto wallet with key management, transaction signing, and blockchain integration—despite zero prior experience with Ethereum tooling—and deliver it in under two days.",
+      decisions: [
+        "Rapid stack mastery: Learned Ethers.js, wallet key handling, and Sepolia RPC endpoints via Stack Overflow and official docs under extreme time pressure.",
+        "Fallback resilience: Implemented retry logic for unstable public RPC nodes to ensure transaction reliability.",
+        "Security baseline: Used JWT for auth and PostgreSQL for encrypted private key storage (though keys were never exposed to frontend)."
+      ],
+      outcome: "One of the few candidates to fully deliver a working wallet. Later discovered the role was a 'ghost job'—a common tactic to extract free work—but the project remains proof of rapid full-stack execution under constraints.",
+      tech: ["Node.js", "Express", "PostgreSQL", "Ethers.js", "Flutter", "JWT"],
+      links: [
+        { name: "Backend", url: "https://github.com/Sadja18/block_chain_wallet_backend" },
+        { name: "Mobile", url: "https://github.com/Sadja18/block_chain_wallet_mobile" }
+      ]
+    },
+    {
+      title: "Sadja Progress Stepper (Flutter)",
+      tagline: "Solved real UX gaps during an Ionic-to-Flutter migration.",
+      about: "A highly customizable Flutter stepper widget published to pub.dev to solve UX gaps during an Ionic-to-Flutter migration.",
+      challenge: "Off-the-shelf Flutter steppers couldn’t support dynamic step insertion, non-linear navigation, or granular visual theming—blocking a critical app migration led by a non-technical PM.",
+      decisions: [
+        "Full visual control: Enabled custom icons (images instead of numbers), per-state color overrides (active/disabled/filled), and connector line styling.",
+        "Navigation flexibility: Supported both linear and free-movement modes, with runtime toggling.",
+        "Zero foreign dependencies: Built entirely in Dart with no non-Indian open-source contributions—meeting internal compliance requirements."
+      ],
+      outcome: "Published to pub.dev and integrated into the migration project. Though later removed when the PM reverted to linear-only flow, it unblocked the team during a critical phase.",
+      tech: ["Flutter", "Dart", "Open Source"],
+      links: [
+        { name: "pub.dev", url: "https://pub.dev/packages/sadja_progress_stepper" },
+        { name: "GitHub", url: "https://github.com/Sadja18/sadja_progress_stepper" }
+      ]
+    },
+    {
+      title: "Face Attribute Analyzer",
+      tagline: "Modular CV component for virtual trial rooms—delivered ready for client integration.",
+      about: "A modular computer vision component for virtual trial rooms—estimating age, gender, race, and skin tone from facial images.",
+      challenge: "Deliver a plug-and-play module for client integration—without access to their internal validation or deployment pipeline.",
+      decisions: [
+        "Pre-trained model reuse: Leveraged an existing CV model but extended its output to include skin tone and confidence scores not in the original API.",
+        "Local inference server: Wrapped the model in a lightweight Python HTTP server for easy client-side integration.",
+        "Stateless design: No persistent storage; each request processed independently for scalability."
+      ],
+      outcome: "Delivered a standalone, client-ready module that required zero backend changes—enabling seamless integration into their virtual trial room application.",
+      tech: ["Python", "Computer Vision", "AI/ML"],
+      links: [{ name: "GitHub", url: "https://github.com/Sadja18/face_analyzer" }]
+    },
+    {
+      title: "IOC Intel Recon Toolkit",
+      tagline: "SIEM-ready network recon in under 2 seconds—no external dependencies.",
+      about: "A Linux-based network reconnaissance toolkit that extracts IPs and domains from local traffic in under 2 seconds—outputting SIEM-ready JSON with zero external dependencies.",
+      challenge: "Incident responders needed fast, offline-capable intel without bloated commercial tools—requiring raw data extraction from ARP, DNS, and DHCP traffic.",
+      decisions: [
+        "Pure shell scripting: Used only built-in Linux tools (`netstat`, `ip`, `arp`)—no external binaries or Python dependencies.",
+        "SIEM-first output: Structured results as JSON matching the team’s MongoDB ingestion schema.",
+        "Speed over completeness: Prioritized sub-2-second runtime by limiting scope to high-value traffic sources."
+      ],
+      outcome: "Became a go-to tool for field teams needing rapid, offline network recon—proving lightweight tooling can outperform commercial suites in constrained environments.",
+      tech: ["Linux", "Networking", "Security", "SIEM"],
+      links: [{ name: "GitHub", url: "https://github.com/Sadja18/ioc-intel-tools" }]
+    },
+    {
+      title: "Doraemon Flappy Bird – Vanilla JS Game",
+      tagline: "60 FPS gameplay on low-end devices with zero dependencies.",
+      about: "A lightweight, high-performance Flappy Bird clone built entirely with vanilla JavaScript and HTML5 Canvas—no frameworks, libraries, or external dependencies.",
+      challenge: "Learn core game development concepts (physics, rendering, input handling) without relying on engines or third-party tools—while ensuring smooth 60 FPS performance even on low-end devices.",
+      decisions: [
+        "No external libraries: Implemented custom physics, collision detection, and frame-loop logic from scratch to understand foundational game mechanics.",
+        "Multi-input support: Unified touch, mouse, and keyboard events into a single control abstraction for cross-device compatibility.",
+        "Performance-first design: Avoided DOM manipulation; used pure Canvas 2D rendering to minimize browser load and enable GitHub Pages deployment."
+      ],
+      outcome: "Delivered a sub-100KB, zero-dependency game that runs at 60 FPS on budget Android devices—proving complex interactions don’t require heavy tooling.",
+      tech: ["Vanilla JavaScript", "HTML5 Canvas", "CSS3", "Responsive Design", "Game Dev"],
+      links: [
+        { name: "Live Demo", url: "https://sadja18.github.io/flappy-bird-game/" },
+        { name: "GitHub", url: "https://github.com/Sadja18/flappy-bird-game" }
+      ]
+    },
+    {
+      title: "Improved – VS Code Theme",
+      tagline: "Reduced eye strain for developers during long coding sessions.",
+      about: "An accessible, ergonomics-focused syntax theme designed to reduce eye strain during long coding sessions.",
+      challenge: "Default dark themes used harsh blue-on-black text that caused fatigue during extended use—especially under low-light conditions.",
+      decisions: [
+        "WCAG-compliant contrast: Ensured all text meets AA/AAA accessibility standards for readability.",
+        "Blue-light reduction: Replaced cool blues with warmer tones to minimize circadian disruption.",
+        "Self-serving design: Built purely to solve a personal pain point—then shared publicly for others with similar needs."
+      ],
+      outcome: "Published to VS Code Marketplace as a sustainable coding tool for developers who prioritize long-term visual comfort over aesthetic trends.",
+      tech: ["VS Code", "Accessibility", "Open Source"],
+      links: [
+        { name: "Marketplace", url: "https://marketplace.visualstudio.com/items?itemName=Sadja.Improved" }
+      ]
+    },
+    {
+      title: "This Portfolio Site",
+      tagline: "A performant, accessible showcase built with modern React tooling.",
+      about: "Designed and developed my own portfolio from scratch using React, TypeScript, and Framer Motion.",
+      challenge: "Create a fast, accessible, and maintainable showcase that reflects engineering values: clean, user-first, and free of bloat.",
+      decisions: [
+        "Content-as-data architecture: All project/experience content lives in structured TypeScript arrays—no hardcoded strings.",
+        "Semantic HTML + ARIA: Built with accessibility as a core requirement, not an afterthought.",
+        "Performance-first: Zero external dependencies beyond React ecosystem; optimized asset loading."
+      ],
+      outcome: "A living portfolio that’s easy to update, accessible to all users, and demonstrates modern React best practices.",
+      tech: ["React", "TypeScript", "Framer Motion", "Bootstrap 5", "Responsive Design", "Accessibility"],
+      links: [
+        { name: "Source Code", url: "https://github.com/Sadja18/my-portfolio" }
+      ]
+    }
+  ];
 
   // ---------- Experience Data ----------
   const experiences: Experience[] = [
@@ -620,59 +545,67 @@ const App: React.FC = () => {
           </div>
         </div>
       </section> */}
+      <section id="projects" className="py-5">
+        <div className="container">
+          <motion.h2 className="text-center fw-bold mb-5" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+            Featured Projects
+          </motion.h2>
+          <div className="row">
+            {projects.map((project, index) => (
+              <motion.div key={index} className="col-md-6 mb-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}>
+                <div className="card shadow-sm h-100">
+                  <div className="card-body">
+                    <h3 className="card-title h5 fw-bold">{project.title}</h3>
+                    <p className="text-primary mb-2"><em>{project.tagline}</em></p>
 
-      {projects.map((project, index) => (
-  <motion.div key={index} className="col-md-6 mb-4" ...>
-    <div className="card shadow-sm h-100">
-      <div className="card-body">
-        <h3 className="card-title h5 fw-bold">{project.title}</h3>
-        <p className="text-primary mb-2"><em>{project.tagline}</em></p>
-        
-        {/* About */}
-        <p className="text-muted">{project.about}</p>
+                    {/* About */}
+                    <p className="text-muted">{project.about}</p>
 
-        {/* Challenge */}
-        <h4 className="fw-semibold mt-3">The Challenge</h4>
-        <p className="text-muted">{project.challenge}</p>
+                    {/* Challenge */}
+                    <h4 className="fw-semibold mt-3">The Challenge</h4>
+                    <p className="text-muted">{project.challenge}</p>
 
-        {/* Key Decisions */}
-        <h4 className="fw-semibold mt-3">Key Decisions & Tradeoffs</h4>
-        <ul className="list-unstyled">
-          {project.decisions.map((decision, i) => (
-            <li key={i} className="d-flex mb-1">
-              <span className="text-primary me-2">•</span>
-              <span className="text-muted">{decision}</span>
-            </li>
-          ))}
-        </ul>
+                    {/* Key Decisions */}
+                    <h4 className="fw-semibold mt-3">Key Decisions & Tradeoffs</h4>
+                    <ul className="list-unstyled">
+                      {project.decisions.map((decision, i) => (
+                        <li key={i} className="d-flex mb-1">
+                          <span className="text-primary me-2">•</span>
+                          <span className="text-muted">{decision}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-        {/* Outcome */}
-        <h4 className="fw-semibold mt-3">Outcome</h4>
-        <p className="text-muted">{project.outcome}</p>
+                    {/* Outcome */}
+                    <h4 className="fw-semibold mt-3">Outcome</h4>
+                    <p className="text-muted">{project.outcome}</p>
 
-        {/* Tech Tags */}
-        <div className="d-flex flex-wrap gap-2 mb-3">
-          {project.tech.map((tech, i) => (
-            <span key={i} className="badge bg-success-subtle text-success-emphasis rounded-pill px-2 py-1">
-              {tech}
-            </span>
-          ))}
-        </div>
+                    {/* Tech Tags */}
+                    <div className="d-flex flex-wrap gap-2 mb-3">
+                      {project.tech.map((tech, i) => (
+                        <span key={i} className="badge bg-success-subtle text-success-emphasis rounded-pill px-2 py-1">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
 
-        {/* Links */}
-        {project.links.length > 0 && (
-          <div className="d-flex flex-wrap gap-3">
-            {project.links.map((link, i) => (
-              <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-primary">
-                {link.name} <ExternalLink size={12} />
-              </a>
+                    {/* Links */}
+                    {project.links.length > 0 && (
+                      <div className="d-flex flex-wrap gap-3">
+                        {project.links.map((link, i) => (
+                          <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-primary">
+                            {link.name} <ExternalLink size={12} />
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
-        )}
-      </div>
-    </div>
-  </motion.div>
-))}
+        </div>
+      </section>
 
       {/* ---------------- SKILLS ---------------- */}
       <section id="skills" className="py-5 bg-body-tertiary">
